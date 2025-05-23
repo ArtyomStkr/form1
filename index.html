@@ -1,4 +1,4 @@
-<form action="https://docs.google.com/forms/d/e/1FAIpQLSce_Ay7KVqclPrNwpwVh7_2orFBsjV3_xy4uQrzEeXyzZCFYw/formResponse" method="POST" target="_blank">
+<!-- <form action="https://docs.google.com/forms/d/e/1FAIpQLSce_Ay7KVqclPrNwpwVh7_2orFBsjV3_xy4uQrzEeXyzZCFYw/formResponse" method="POST" target="_blank">
   <p><strong>¿Cuál es tu color favorito?</strong></p>
   <label>
     <input type="radio" name="entry.2141573893" value="Rojo" required> Rojo
@@ -14,4 +14,173 @@
     <input type="radio" name="entry.2141573893" value="Amarillo"> Amarillo
   </label><br><br>
   <button type="submit">Enviar</button>
-</form>
+</form> -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menú de Comidas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        .menu-section {
+            display: none;
+        }
+
+        .menu-card {
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .menu-card:hover {
+            transform: scale(1.02);
+        }
+
+        .menu-card.selected {
+            box-shadow: 0 0 0 4px #28a745;
+            background-color: #e6ffe6;
+        }
+    </style>
+</head>
+
+<body class="bg-light">
+
+    <div class="container py-5">
+        <!-- Formulario de nombre -->
+        <div id="nameForm" class="text-center">
+                        <img src="https://th.bing.com/th/id/OIP.3gSwfevPSl3ABK2EPCnMXgHaHa?rs=1&pid=ImgDetMain" width="150px">
+            <h2><i class="fas fa-utensils"></i> Bienvenido</h2>
+            <p class="mb-4">Por favor, introduce tu nombre para ver el menU:</p>
+            <div class="input-group mb-3 w-50 mx-auto">
+                <input type="text" id="Nombre" class="form-control" placeholder="Tu nombre" />
+                <button class="btn btn-success" onclick="showMenu()">Entrar</button>
+            </div>
+        </div>
+
+        <!-- Sección del menú -->
+        <div id="menuSection" class="menu-section">
+            <h3 class="text-center mb-4">Hola <span id="displayName"></span>, selecciona tus platos:</h3>
+            <div class="row g-4">
+
+                <!-- Tarjetas de comida -->
+                <div class="col-md-4">
+                    <div class="card menu-card h-100 text-center p-3" data-plato="Comida 1">
+                        <img src="https://th.bing.com/th/id/OIP.3gSwfevPSl3ABK2EPCnMXgHaHa?rs=1&pid=ImgDetMain" alt="">
+                        <!-- <i class="fas fa-pizza-slice fa-2x mb-2 text-danger"></i> -->
+                        <h5>Comida 1</h5>
+                        <small>Con muchas papas.</small><br />
+                        <span class="badge bg-success mt-2"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card menu-card h-100 text-center p-3" data-plato="Comida 1">
+                        <img src="https://th.bing.com/th/id/OIP.3gSwfevPSl3ABK2EPCnMXgHaHa?rs=1&pid=ImgDetMain" alt="">
+                        <!-- <i class="fas fa-hamburger fa-2x mb-2 text-warning"></i> -->
+                        <h5>Comida 1</h5>
+                        <small>Con muchas papas.</small><br />
+                        <span class="badge bg-success mt-2"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card menu-card h-100 text-center p-3" data-plato="Comida 1">
+                        <img src="https://th.bing.com/th/id/OIP.3gSwfevPSl3ABK2EPCnMXgHaHa?rs=1&pid=ImgDetMain" alt="">
+                        <!-- <i class="fas fa-ice-cream fa-2x mb-2 text-pink"></i> -->
+                        <h5>Comida 1</h5>
+                        <small>Con muchas papas.</small><br />
+                        <span class="badge bg-success mt-2"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-4">
+
+                <!-- Tarjetas de comida -->
+                <div class="col-md-4">
+                    <div class="card menu-card h-100 text-center p-3" data-plato="Comida 1">
+                        <img src="https://th.bing.com/th/id/OIP.3gSwfevPSl3ABK2EPCnMXgHaHa?rs=1&pid=ImgDetMain" alt="">
+                        <!-- <i class="fas fa-pizza-slice fa-2x mb-2 text-danger"></i> -->
+                        <h5>Comida 1</h5>
+                        <small>Con muchas papas.</small><br />
+                        <span class="badge bg-success mt-2"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card menu-card h-100 text-center p-3" data-plato="Comida 1">
+                        <img src="https://th.bing.com/th/id/OIP.3gSwfevPSl3ABK2EPCnMXgHaHa?rs=1&pid=ImgDetMain" alt="">
+                        <!-- <i class="fas fa-hamburger fa-2x mb-2 text-warning"></i> -->
+                        <h5>Comida 1</h5>
+                        <small>Con muchas papas.</small><br />
+                        <span class="badge bg-success mt-2"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card menu-card h-100 text-center p-3" data-plato="Comida 1">
+                        <img src="https://th.bing.com/th/id/OIP.3gSwfevPSl3ABK2EPCnMXgHaHa?rs=1&pid=ImgDetMain" alt="">
+                        <!-- <i class="fas fa-ice-cream fa-2x mb-2 text-pink"></i> -->
+                        <h5>Comida 1</h5>
+                        <small>Con muchas papas.</small><br />
+                        <span class="badge bg-success mt-2"></span>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Botón de pedir -->
+            <div class="text-center mt-4">
+                <button class="btn btn-success btn-lg" onclick="realizarPedido()">
+                    <i class="fas fa-check"></i> Pedir
+                </button>
+            </div>
+
+            <!-- Resultado del pedido -->
+            <div id="pedidoResumen" class="mt-4 text-center"></div>
+        </div>
+    </div>
+
+    <script>
+        function showMenu() {
+            const name = document.getElementById('Nombre').value.trim();
+            if (name) {
+                document.getElementById('displayName').textContent = name;
+                document.getElementById('nameForm').style.display = 'none';
+                document.getElementById('menuSection').style.display = 'block';
+            } else {
+                alert('Por favor, introduce tu nombre.');
+            }
+        }
+
+        // Manejo con jQuery
+        $(document).ready(function () {
+            $('.menu-card').click(function () {
+                $(this).toggleClass('selected');
+            });
+        });
+
+        function realizarPedido() {
+            const seleccionados = $('.menu-card.selected').map(function () {
+                return $(this).data('plato');
+            }).get();
+
+            const resumen = document.getElementById('pedidoResumen');
+            if (seleccionados.length > 0) {
+                resumen.innerHTML = `
+          <h4>Has pedido:</h4>
+          <ul class="list-group w-50 mx-auto mt-2">
+            ${seleccionados.map(item => `<li class="list-group-item">${item}</li>`).join('')}
+          </ul>
+        `;
+            } else {
+                resumen.innerHTML = `<div class="alert alert-warning mt-3">No seleccionaste ningún plato.</div>`;
+            }
+        }
+    </script>
+</body>
+
+</html>
